@@ -1,28 +1,22 @@
 <template>
   <div class="icons">
     <swiper :options="swiperOption">
-      <swiper-slide v-for="(page, index) of pages" :key="index">
-        <div
-          class="icon"
-          v-for="item of page"
-          :key="item.id"
-        >
-          <div class='icon-img'>
-            <img class='icon-img-content' :src='item.imgUrl' />
+      <swiper-slide v-for="(page,index) of pages" :key="index">
+        <div class="icon" v-for='item of page' :key='item.id'>
+          <div class="icon-img">
+            <img class="icon-img-content" :src="item.imgUrl" alt="">
           </div>
           <p class="icon-desc">{{item.desc}}</p>
         </div>
-<<<<<<< HEAD
-=======
-        <div class="swiper-pagination"  slot="pagination"></div>
->>>>>>> a12acacbd075ad855f69c3f66f2b940c13a1ba2f
       </swiper-slide>
+      <div class="swiper-pagination"  slot="pagination"></div>
     </swiper>
+
   </div>
 </template>
 
 <script>
-export default {
+export default{
   name: 'HomeIcons',
   props: {
     list: Array
@@ -30,6 +24,7 @@ export default {
   data () {
     return {
       swiperOption: {
+        pagination: '.swiper-pagination',
         autoplay: false
       }
     }
@@ -50,12 +45,14 @@ export default {
 }
 </script>
 
-<style lang="stylus" scoped>
-  @import '~styles/varibles.styl'
+<style lang='stylus' scoped>
+  @import '~styles/varibles.styl';
   @import '~styles/mixins.styl'
+  .swiper-container-horizontal > .swiper-pagination-bullets
+    bottom: 0rem
   .icons >>> .swiper-container
-    height: 0
-    padding-bottom: 50%
+    height:0
+    padding-bottom:50%
   .icons
     margin-top: .1rem
     .icon
@@ -63,23 +60,23 @@ export default {
       overflow: hidden
       float: left
       width: 25%
-      height: 0
-      padding-bottom: 25%
+      height:0
+      padding-bottom: 24%
       .icon-img
         position: absolute
-        top: 0
-        left: 0
+        top:5%
+        left:0
         right: 0
-        bottom: .44rem
+        bottom: 5%
         box-sizing: border-box
-        padding: .1rem
+        padding: .15rem
         .icon-img-content
           display: block
-          margin: 0 auto
           height: 100%
+          margin: 0 auto
       .icon-desc
         position: absolute
-        left: 0
+        left:0
         right: 0
         bottom: 0
         height: .44rem
