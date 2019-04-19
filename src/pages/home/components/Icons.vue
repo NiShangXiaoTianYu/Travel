@@ -12,10 +12,6 @@
           </div>
           <p class="icon-desc">{{item.desc}}</p>
         </div>
-<<<<<<< HEAD
-=======
-        <div class="swiper-pagination"  slot="pagination"></div>
->>>>>>> a12acacbd075ad855f69c3f66f2b940c13a1ba2f
       </swiper-slide>
     </swiper>
   </div>
